@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="d-flex justify-between">
+            <h2>LOGO</h2>
+            <ul class="d-flex">
+                <li><a href="/">Home</a></li>
+                <li><a href="/createForm">Create</a></li>
+            </ul>
+        </nav>
+    </header>
+    <h2>Volunteer</h2>
+    <div class="card-container">
+        <% volunteer.forEach((v) => { %>
+            <div class="card">
+                <h3><%= v.yourname %> <%= v.lastname %></h3>
+                <p><strong>Email:</strong> <%= v.email %></p>
+                <p><strong>Phone:</strong> <%= v.phonenum %></p>
+                <p><strong>City:</strong> <%= v.city %>, <%= v.country %></p>
+                <div class="card-actions">
+                    <a href="/singleVolunteer/<%= v.id %>" class="btn">Edit</a>
+                    <a href="/deleteVolunteer/<%= v.id %>" class="btn">Delete</a>
+                </div>
+            </div>
+        <% }) %>
+    </div>
+</body>
+</html>
